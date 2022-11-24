@@ -29,10 +29,10 @@
 
                 default_layer {
                         bindings = <
-  &none   &mt LGUI RBKT     &kp Q   &kp W   &kp F         &kp P             &kp B                  &kp J         &kp L            &kp U         &kp Y     &kp APOS    &kp LBKT        &none
-          &mt LCTRL GRAVE   &mt LGUI A   &mt LALT R   &mt LCTRL S         &mt LSHIFT T             &kp G          &kp M           &kp N         &kp E     &kp I       &kp O           &mt RCTRL SQT
-          &mt LALT MINUS    &kp Z   &kp X   &kp C         &kp D             &kp V                  &kp K         &kp H            &kp COMMA     &kp DOT   &kp SLASH   &mt RALT BSLH
-                                            &lt RSE TAB   &mt LSHFT SPACE   &lt LWR RET            &lt LWR ESC   &mt RSHFT BSPC   &lt RSE DEL
+  &none   &mt LGUI RBKT     &kp Q   &kp W   &kp F         &kp P             &kp B                        &kp J                 &kp L            &kp U         &kp Y     &kp APOS    &kp LBKT        &none
+          &mt LCTRL GRAVE   &mt LGUI A   &mt LALT R   &mt LCTRL S           &mt LSHIFT T                 &kp G                 &kp M           &kp N         &kp E     &kp I       &kp O           &none
+          &mt LALT MINUS    &kp Z   &kp X   &kp C         &kp D             &kp V                        &kp K                 &kp H            &kp COMMA     &kp DOT   &kp SLASH   &mt RALT BSLH
+                                            &lt RSE TAB   &mt LSHFT SPACE   &lt LWR RET                  &lt LWR ESC           &mt RSHFT BSPC   &lt RSE DEL
                         >;
                 };
                 lower_layer {
@@ -57,6 +57,14 @@
   &none   &bootloader   &none          &none          &none          &none          &none               &none          &none          &none          &none          &none          &bootloader   &none
           &bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4        &bt BT_SEL 4   &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &bt BT_CLR
           &reset        &none          &none          &none          &none          &none               &none          &none          &none          &none          &none          &reset
+                                                      &trans         &none          &trans              &none          &trans         &trans
+                        >;
+                };
+                nav_layer {
+                        bindings = <
+  &none   &none   &none          &none          &none          &none          &none                    &none          &none          &none          &none          &none          &bootloader   &none
+        &bt BT_CLR    &kt LEFT   &UP   &DOWN   &kt RIGHT   &kt CAPS                 &none              &kt RSHIFT   &kt RCTRL   &kt RALT   &kt RGUI   &none
+          &none        &none          &none          &none          &none          &none               &none          &none          &none          &none          &none          &reset
                                                       &trans         &none          &trans              &none          &trans         &trans
                         >;
                 };
