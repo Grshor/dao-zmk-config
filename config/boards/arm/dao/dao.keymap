@@ -62,10 +62,10 @@
                 };
                 nav_layer {
                         bindings = <
-  &none   &none   &none          &none          &none          &none          &none                    &none          &none          &none          &none          &none          &bootloader   &none
-        &bt BT_CLR    &kt LEFT   &UP   &DOWN   &kt RIGHT   &kt CAPS                 &none              &kt RSHIFT   &kt RCTRL   &kt RALT   &kt RGUI   &none
-          &none        &none          &none          &none          &none          &none               &none          &none          &none          &none          &none          &reset
-                                                      &trans         &none          &trans              &none          &trans         &trans
+  &none   &none  &none     &none      &none      &none       &none                &none  &none      &none     &none    &none      &none   &none
+          &none  &kt LEFT  &kt DOWN   &kt UP   &kt RIGHT   &kt CAPS               &none  &kt RSHIFT &kt RCTRL &kt RALT &kt RGUI   &none
+          &none  &none     &none      &none      &none       &none                &none  &none      &none     &none    &none      &reset
+                                      &trans     &none       &trans               &none  &trans     &trans
                         >;
                 };
         };
