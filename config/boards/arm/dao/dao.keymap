@@ -31,7 +31,7 @@ behaviors {
                 label = "HOMEROW_MODS";
                 #binding-cells = <2>;
                 tapping-term-ms = <150>;
-                quick-tap-ms = <0>;
+                quick-tap-ms = <100>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
         };
@@ -47,7 +47,7 @@ default_layer {
   &none &kp LBKT        &kp Q      &kp W      &kp F        &kp P        &kp B                      &kp J &kp L        &kp U       &kp Y      &kp APOS    &kp RBKT       &none
         &kt SEMICOLON   &hm LGUI A &hm LALT R &hm LCTRL S  &hm LSHIFT T &kp G                      &kp M &hm RSHIFT N &hm RCTRL E &hm RALT I &hm RGUI O  &caps_word
         &mt LALT EQUAL  &kp Z      &kp X      &kp C        &kp D        &kp V                      &kp K &kp H        &kp COMMA   &kp DOT    &kp SLASH   &mt RALT BSLH
-                                              &lt RSE GRAVE  &mt LSHIFT SPACE   &lt LWR TAB        &lt LWR ENTER      &mt RSHIFT BSPC        &lt RSE DEL
+                                              &lt RSE ESC  &mt LSHIFT SPACE   &lt LWR TAB          &lt LWR ENTER      &mt RSHIFT BSPC        &lt RSE DEL
         >;
 };
 
