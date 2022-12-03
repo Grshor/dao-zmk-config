@@ -10,9 +10,18 @@
 
 #define DEF 0
 #define LWR 1
-#define RSE 2
+#define FNL 2
 #define ADJ 3
-#define QWE 4
+
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+
+
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
@@ -25,54 +34,112 @@
 / {
 
 
-behaviors {
-        hm: homerow_mods {
-                compatible = "zmk,behavior-hold-tap";
-                label = "HOMEROW_MODS";
-                #binding-cells = <2>;
-                tapping-term-ms = <150>;
-                quick-tap-ms = <200>;
-                flavor = "tap-preferred";
-                bindings = <&kp>, <&kp>;
+        behaviors {
+                hm: homerow_mods {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_MODS";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <150>;
+                        quick-tap-ms = <200>;
+                        flavor = "tap-preferred";
+                        bindings = <&kp>, <&kp>;
+                };
         };
-};
+
+        combos {
+                compatible = "zmk,combos";
+               /*left hand*/
+               // row 1
+                COMBO(LBKT, &kp LBKT, 3 4) // [
+                COMBO(RBKT, &kp RBKT, 4 5) // ]
+                // COMBO(BBKTS, &none ,3 5)   // []<-
+                //row 1.5
+                COMBO(AT, &kp AT, 3 16)           // @
+                COMBO(HASH, &kp RBKT, 4 17)       // #
+                COMBO(EXCL, &kp EXCL, 4 18)       // !
+                COMBO(DOLLAR, &kp DOLLAR, 5 18)   // $
+                COMBO(PERCENT, &kp PERCENT, 6 19) // %
+
+                //row 2
+                COMBO(MINUS, &kp MINUS, 16 17) // -
+                COMBO(EQUAL, &kp EQUAL, 17 18) // =
+                COMBO(PLUS, &kp PLUS, 18 19)   // +
+                COMBO(SHFT_INS, &none ,16 18)  // shift+ins
 
 
+                //row 2.5
+                // COMBO(GRAVES, &none AT, 16 28) // ``<-
+                COMBO(ACCENT, &kp RBKT, 17 29) // `
+                COMBO(UNDER, &kp UNDER, 17 30) // _
+                COMBO(TILDE, &kp TILDE, 18 30) // ~
+                //row 3
+                COMBO(LBRC, &kp LEFT_BRACE, 28 29) // {
+                COMBO(RBRC, &kp RIGHT_BRACE, 29 30)// }
+                // COMBO(BRACES, &none, 28 30) // {}<-
+
+               /*right hand*/
+                // row 1
+                COMBO(LPAR, &kp LPAR,8 9)    // (
+                COMBO(RPAR, &kp RPAR, 9 10)  // )
+                // COMBO(BPARS, &none, 8 10)     // ()<-
+                //row 1.5
+                COMBO(CARET, &kp CARET, 7 20)           // ^
+                COMBO(AMPS, &kp AMPS, 8 21)       // &
+                COMBO(STAR, &kp STAR, 9 22)       // *
+                COMBO(QUESTION, &kp QUESTION, 9 21)   // ?
+                COMBO(BACKSLASH, &kp BACKSLASH, 10 23) // \
+                //row 2
+                COMBO(PIPE, &kp PIPE, 20 21) // |
+                COMBO(DOUBLE_QUOTES, &kp DOUBLE_QUOTES, 21 22) // "
+                COMBO(SINGLE_QUOTE, &kp SINGLE_QUOTE, 22 23)   // '
+                //row 2.5
+                // COMBO(FULL_QUOTES, &none, 21 33) // ""<-
+                COMBO(COLON, &kp COLON, 22 33) // :
+                // COMBO(SMALL_QUOTES, &none, 22 34) // ''<-
+                //row 3
+                COMBO(LT, &kp LT, 33 34) // <
+                COMBO(GT, &kp GT, 35 35)// >
+                // COMBO(LTGT, &none ,33 35) // <><-
+        };
 
 keymap {
         compatible = "zmk,keymap";
 
 default_layer {
         bindings = <
-  &none &kp LBKT        &kp Q      &kp W      &kp F        &kp P        &kp B                      &kp J &kp L        &kp U       &kp Y      &kp APOS    &kp RBKT       &none
-        &kp SEMICOLON   &hm LGUI A &hm LALT R &hm LCTRL S  &hm LSHIFT T &kp G                      &kp M &hm RSHIFT N &hm RCTRL E &hm RALT I &hm RGUI O  &caps_word
-        &mt LALT EQUAL  &kp Z      &kp X      &kp C        &kp D        &kp V                      &kp K &kp H        &kp COMMA   &kp DOT    &kp SLASH   &mt RALT BSLH
-                                              &lt RSE ESC  &mt LSHIFT SPACE   &lt LWR TAB          &lt LWR ENTER      &mt RSHIFT BSPC        &lt RSE DEL
+  &none &kp TAB        &kp Q      &kp W      &kp F        &kp P        &kp B              /**/  &kp J &kp L        &kp U       &kp Y      &kp SEMICOLON    &kp DEL       &none
+        &kp ESC        &hm LGUI A &hm LALT R &hm LCTRL S  &hm LSHIFT T &kp G              /**/  &kp M &hm RSHIFT N &hm RCTRL E &hm RALT I &hm RGUI O  &caps_word
+        &mt LALT EQUAL &kp Z      &kp X      &kp C        &kp D        &kp V              /**/  &kp K &kp H        &kp COMMA   &kp DOT    &kp SLASH   &mt RALT BSLH
+                                             &lt FNL ESC  &mt LSHIFT SPACE   &lt LWR TAB  /**/  &lt LWR ENTER      &mt RSHIFT BSPC        &lt FNL DEL
         >;
 };
 
 
-
+        /*
+     0  1  2  3  4  5  6     7  8  9  10 11 12   13
+        14 15 16 17 18 19    20 21 22 23 24 25
+        26 27 28 29 30 31    32 33 34 35 36 37
+        */
 
 
 lower_layer {
         bindings = <
-  &none   &mt LGUI F1      &kp F2     &kp F3   &kp F4        &kp F5     &kp F6               &kp F7     &kp F8     &kp F9    &kp F10    &kp F11    &kp F12           &none
-          &mt LCTRL PLUS   &kp EXCL   &kp AT   &kp HASH      &kp DLLR   &kp PRCNT            &kp CARET  &kp AMPS   &kp STAR  &kp LPAR   &kp RPAR   &mt RCTRL MINUS
-          &mt LALT EQUAL   &kp N1     &kp N2   &kp N3        &kp N4     &kp N5               &kp N6     &kp N7     &kp N8    &kp N9     &kp N0     &kp RALT
-                                               &lt ADJ ESC   &trans     &trans               &trans     &trans     &lt ADJ DEL
+  &none   &kp C_BRI_DEC &kp C_BRI_INC &kp HOME   &kp UP      &kp END    &kp C_VOL_UP    /**/    &kp KP_PLUS  &kp KP_N7  &kp KP_N8 &kp KP_N9  &none      &none           &none
+          &kp CAPS      &none         &kp LEFT   &kp DOWN    &kp RIGHT  &kp C_VOL_DN    /**/    &kp KP_DOT   &kp KP_N4  &kp KP_N5 &kp KP_N6  &kp KP_N0  &kp BSPC
+          &kp EQUAL     &none         &kp C_PREV &kp C_PP    &kp C_NEXT &kp C_MUTE      /**/    &kp KP_MINUS &kp KP_N1  &kp KP_N2 &kp KP_N3  &none      &none
+                                                 &lt ADJ ESC &trans     &trans          /**/    &trans       &trans     &lt ADJ DEL
         >;
 };
 
 
 
 
-raise_layer {
+fn_layer {
         bindings = <
-  &none   &mt LGUI KP_NUM   &kp KP_SLASH      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS          &kp C_VOL_UP   &kp HOME   &kp PSCRN   &kp PG_UP   &kp SLCK          &kp CLCK           &none
-          &mt LCTRL EQUAL   &kp KP_MULTIPLY   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS           &kp C_MUTE     &kp LEFT   &kp UP      &kp RIGHT   &kp INS           &mt RCTRL  K_APP
-          &kp LALT          &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT            &kp C_VOL_DN   &kp END    &kp DOWN    &kp PG_DN   &kp PAUSE_BREAK   &kp RALT
-                                                          &trans      &trans      &lt ADJ TAB           &lt ADJ ENTER    &trans     &trans
+  &none   &none    &none   &none   &none   &none   &none          &none   &none   &none   &none   &none   &none           &none
+          &none    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5         &kp F6  &kp F7  &kp F8 &kp F9  &kp F10 &none 
+          &none    &kp F11 &kp F12 &kp F13 &kp F14 &kp F15        &kp F16 &kp F17 &kp F1 &kp F19 &kp F20 &kp F21
+                        &trans      &trans      &lt ADJ TAB       &lt ADJ ENTER    &trans     &trans
         >;
 };
 
@@ -84,16 +151,6 @@ adjust_layer {
           &bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4        &bt BT_SEL 4   &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &bt BT_CLR
           &reset        &none          &none          &none          &none          &none               &none          &none          &none          &none          &none          &reset
                                                       &trans         &none          &trans              &none          &trans         &trans
-        >;
-};
-
-
-qwerty_layer {
-        bindings = <
-  &none   &mt LGUI RBKT     &kp Q   &kp W   &kp E         &kp R             &kp T                &kp Y         &kp U            &kp I         &kp O     &kp P      &kp LBKT        &none
-          &mt LCTRL GRAVE   &kp A   &kp S   &kp D         &kp F             &kp G                &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
-          &mt LALT MINUS    &kp Z   &kp X   &kp C         &kp V             &kp B                &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &mt RALT BSLH
-                                            &lt RSE ESC   &mt LSHFT SPACE   &lt LWR TAB          &lt LWR ENTER   &mt RSHFT BSPC   &lt RSE DEL
         >;
 };
 
