@@ -47,53 +47,197 @@
                 compatible = "zmk,combos";
                /*left hand*/
                // row 1
-                COMBO(lbkt, &kp LBKT, 3 4) // [
-                COMBO(rbkt, &kp RBKT, 4 5) // ]
-                // COMBO(BBKTS, &none ,3 5)   // []<-
+                combo_lbkt{
+                    timeout-ms = <50>; \
+                    bindings = <&kp LBKT>;\
+                    key-positions = <3 4>;\
+                    layers = <0>;\
+                };     // [
+                combo_rbkt{
+                    timeout-ms = <50>; \
+                    bindings = <&kp RBKT>;\
+                    key-positions = <4 5>;\
+                    layers = <0>;\
+                };     // ]
                 //row 1.5
-                COMBO(at, &kp AT, 3 16)           // @
-                COMBO(hash, &kp RBKT, 4 17)       // #
-                COMBO(excl, &kp EXCL, 4 18)       // !
-                COMBO(dollar, &kp DOLLAR, 5 18)   // $
-                COMBO(percent, &kp PERCENT, 6 19) // %
+                combo_at{
+                    timeout-ms = <50>; \
+                    bindings = <&kp AT>;\
+                    key-positions = <3 16>;\
+                    layers = <0>;\
+                };     // @
+                combo_hash{
+                    timeout-ms = <50>; \
+                    bindings = <&kp RBKT>;\
+                    key-positions = <4 17>;\
+                    layers = <0>;\
+                };     // #
+                combo_excl{
+                    timeout-ms = <50>; \
+                    bindings = <&kp EXCL>;\
+                    key-positions = <4 18>;\
+                    layers = <0>;\
+                };     // !
+                combo_dollar{
+                    timeout-ms = <50>; \
+                    bindings = <&kp DOLLAR>;\
+                    key-positions = <5 18>;\
+                    layers = <0>;\
+                };     // $
+                combo_percent{
+                    timeout-ms = <50>; \
+                    bindings = <&kp PERCENT>;\
+                    key-positions = <6 19>;\
+                    layers = <0>;\
+                };     // %
                 //row 2
-                COMBO(minus, &kp MINUS, 16 17) // -
-                COMBO(equal, &kp EQUAL, 17 18) // =
-                COMBO(plus, &kp PLUS, 18 19)   // +
-                // COMBO(shiftins, &none ,16 18)  // shift+ins
+                combo_minus{
+                    timeout-ms = <50>; \
+                    bindings = <&kp MINUS>;\
+                    key-positions = <16 17>;\
+                    layers = <0>;\
+                };     // -
+                combo_equal{
+                    timeout-ms = <50>; \
+                    bindings = <&kp EQUAL>;\
+                    key-positions = <17 18>;\
+                    layers = <0>;\
+                };     // =
+                combo_plus{
+                    timeout-ms = <50>; \
+                    bindings = <&kp PLUS>;\
+                    key-positions = <18 19>;\
+                    layers = <0>;\
+                };     // +
                 //row 2.5
-                // COMBO(GRAVES, &none AT, 16 28) // ``<-
-                COMBO(accent, &kp GRAVE, 17 29) // `
-                COMBO(under, &kp UNDER, 17 30) // _
-                COMBO(tilde, &kp TILDE, 18 30) // ~
+                combo_accent{
+                    timeout-ms = <50>; \
+                    bindings = <&kp GRAVE>;\
+                    key-positions = <17 29>;\
+                    layers = <0>;\
+                };     // `
+                combo_under{
+                    timeout-ms = <50>; \
+                    bindings = <&kp UNDER>;\
+                    key-positions = <17 30>;\
+                    layers = <0>;\
+                };     // _
+                combo_tilde{
+                    timeout-ms = <50>; \
+                    bindings = <&kp TILDE>;\
+                    key-positions = <18 30>;\
+                    layers = <0>;\
+                };     // ~
                 //row 3
-                COMBO(lbrc, &kp LEFT_BRACE, 28 29) // {
-                COMBO(rbrc, &kp RIGHT_BRACE, 29 30)// }
-                // COMBO(BRACES, &none, 28 30) // {}<-
+                combo_lbrc{
+                    timeout-ms = <50>; \
+                    bindings = <&kp LEFT_BRACE>;\
+                    key-positions = <28 29>;\
+                    layers = <0>;\
+                };     // {
+                combo_rbrc{
+                    timeout-ms = <50>; \
+                    bindings = <&kp RIGHT_BRACE>;\
+                    key-positions = <29 30>;\
+                    layers = <0>;\
+                };   // };
 
                /*right hand*/
                 // row 1
-                COMBO(lpar, &kp LPAR,8 9)    // (
-                COMBO(rpar, &kp RPAR, 9 10)  // )
-                // COMBO(BPARS, &none, 8 10)     // ()<-
+                combo_lpar{
+                    timeout-ms = <50>; \
+                    bindings = <&kp LPAR>;\
+                    key-positions = <8 9>;\
+                    layers = <0>;\
+                };     // (
+                combo_rpar{
+                    timeout-ms = <50>; \
+                    bindings = <&kp RPAR>;\
+                    key-positions = <9 10>;\
+                    layers = <0>;\
+                };     // )
                 //row 1.5
-                COMBO(caret, &kp CARET, 7 20)           // ^
-                COMBO(amps, &kp AMPS, 8 21)       // &
-                COMBO(star, &kp STAR, 9 22)       // *
-                COMBO(question, &kp QUESTION, 9 21)   // ?
-                COMBO(backslash, &kp BACKSLASH, 10 23) // \
+                combo_caret{
+                    timeout-ms = <50>; \
+                    bindings = <&kp CARET>;\
+                    key-positions = <7 20>;\
+                    layers = <0>;\
+                };     // ^
+                combo_amps{
+                    timeout-ms = <50>; \
+                    bindings = <&kp AMPS>;\
+                    key-positions = <8 21>;\
+                    layers = <0>;\
+                };     // &
+                combo_star{
+                    timeout-ms = <50>; \
+                    bindings = <&kp STAR>;\
+                    key-positions = <9 22>;\
+                    layers = <0>;\
+                };     // *
+                combo_question{
+                    timeout-ms = <50>; \
+                    bindings = <&kp QUESTION>;\
+                    key-positions = <9 21>;\
+                    layers = <0>;\
+                };     // ?
+                combo_backslash{
+                    timeout-ms = <50>; \
+                    bindings = <&kp BACKSLASH>;\
+                    key-positions = <10 23>;\
+                    layers = <0>;\
+                };     // \
                 //row 2
-                COMBO(pipe, &kp PIPE, 20 21) // |
-                COMBO(double_quote, &kp DOUBLE_QUOTES, 21 22) // "
-                COMBO(single_quote, &kp SINGLE_QUOTE, 22 23)   // '
+                combo_pipe{
+                    timeout-ms = <50>; \
+                    bindings = <&kp PIPE>;\
+                    key-positions = <20 21>;\
+                    layers = <0>;\
+                };     // |
+                combo_double_quote{
+                    timeout-ms = <50>; \
+                    bindings = <&kp DOUBLE_QUOTES>;\
+                    key-positions = <21 22>;\
+                    layers = <0>;\
+                };     // "
+                combo_single_quote{
+                    timeout-ms = <50>; \
+                    bindings = <&kp SINGLE_QUOTE>;\
+                    key-positions = <22 23>;\
+                    layers = <0>;\
+                };     // '
                 //row 2.5
-                // COMBO(FULL_QUOTES, &none, 21 33) // ""<-
-                COMBO(colon, &kp COLON, 22 33) // :
-                // COMBO(SMALL_QUOTES, &none, 22 34) // ''<-
+                combo_colon{
+                    timeout-ms = <50>; \
+                    bindings = <&kp COLON>;\
+                    key-positions = <22 33>;\
+                    layers = <0>;\
+                };     // :
                 //row 3
-                COMBO(lt, &kp LT, 33 34) // <
-                COMBO(gt, &kp GT, 35 35)// >
+                combo_lt{
+                    timeout-ms = <50>; \
+                    bindings = <&kp LT>;\
+                    key-positions = <33 34>;\
+                    layers = <0>;\
+                };     // <
+                combo_gt{
+                    timeout-ms = <50>; \
+                    bindings = <&kp GT>;\
+                    key-positions = <35 35>;\
+                    layers = <0>;\
+                };// >
+
                 // COMBO(LTGT, &none ,33 35) // <><-
+                // COMBO(BBKTS, &none ,3 5)   // []<-
+                // COMBO(shiftins, &none ,16 18)  // shift+ins
+                // COMBO(GRAVES, &none AT, 16 28) // ``<-
+                // COMBO(BRACES, &none, 28 30) // {};<-
+                // COMBO(BPARS, &none, 8 10)     // ()<-
+                // COMBO(FULL_QUOTES, &none, 21 33) // ""<-
+                // COMBO(SMALL_QUOTES, &none, 22 34) // ''<-
+
+
+
         };
 
 keymap {
