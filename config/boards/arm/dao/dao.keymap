@@ -26,14 +26,11 @@
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
 
-
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
 
 / {
-
-
         behaviors {
                 hm: homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
@@ -50,55 +47,52 @@
                 compatible = "zmk,combos";
                /*left hand*/
                // row 1
-                COMBO(LBKT, &kp LBKT, 3 4) // [
-                COMBO(RBKT, &kp RBKT, 4 5) // ]
+                COMBO(lbkt, &kp LBKT, 3 4) // [
+                COMBO(rbkt, &kp RBKT, 4 5) // ]
                 // COMBO(BBKTS, &none ,3 5)   // []<-
                 //row 1.5
-                COMBO(AT, &kp AT, 3 16)           // @
-                COMBO(HASH, &kp RBKT, 4 17)       // #
-                COMBO(EXCL, &kp EXCL, 4 18)       // !
-                COMBO(DOLLAR, &kp DOLLAR, 5 18)   // $
-                COMBO(PERCENT, &kp PERCENT, 6 19) // %
-
+                COMBO(at, &kp AT, 3 16)           // @
+                COMBO(hash, &kp RBKT, 4 17)       // #
+                COMBO(excl, &kp EXCL, 4 18)       // !
+                COMBO(dollar, &kp DOLLAR, 5 18)   // $
+                COMBO(percent, &kp PERCENT, 6 19) // %
                 //row 2
-                COMBO(MINUS, &kp MINUS, 16 17) // -
-                COMBO(EQUAL, &kp EQUAL, 17 18) // =
-                COMBO(PLUS, &kp PLUS, 18 19)   // +
-                COMBO(SHFT_INS, &none ,16 18)  // shift+ins
-
-
+                COMBO(minus, &kp MINUS, 16 17) // -
+                COMBO(equal, &kp EQUAL, 17 18) // =
+                COMBO(plus, &kp PLUS, 18 19)   // +
+                // COMBO(shiftins, &none ,16 18)  // shift+ins
                 //row 2.5
                 // COMBO(GRAVES, &none AT, 16 28) // ``<-
-                COMBO(ACCENT, &kp RBKT, 17 29) // `
-                COMBO(UNDER, &kp UNDER, 17 30) // _
-                COMBO(TILDE, &kp TILDE, 18 30) // ~
+                COMBO(accent, &kp GRAVE, 17 29) // `
+                COMBO(under, &kp UNDER, 17 30) // _
+                COMBO(tilde, &kp TILDE, 18 30) // ~
                 //row 3
-                COMBO(LBRC, &kp LEFT_BRACE, 28 29) // {
-                COMBO(RBRC, &kp RIGHT_BRACE, 29 30)// }
+                COMBO(lbrc, &kp LEFT_BRACE, 28 29) // {
+                COMBO(rbrc, &kp RIGHT_BRACE, 29 30)// }
                 // COMBO(BRACES, &none, 28 30) // {}<-
 
                /*right hand*/
                 // row 1
-                COMBO(LPAR, &kp LPAR,8 9)    // (
-                COMBO(RPAR, &kp RPAR, 9 10)  // )
+                COMBO(lpar, &kp LPAR,8 9)    // (
+                COMBO(rpar, &kp RPAR, 9 10)  // )
                 // COMBO(BPARS, &none, 8 10)     // ()<-
                 //row 1.5
-                COMBO(CARET, &kp CARET, 7 20)           // ^
-                COMBO(AMPS, &kp AMPS, 8 21)       // &
-                COMBO(STAR, &kp STAR, 9 22)       // *
-                COMBO(QUESTION, &kp QUESTION, 9 21)   // ?
-                COMBO(BACKSLASH, &kp BACKSLASH, 10 23) // \
+                COMBO(caret, &kp CARET, 7 20)           // ^
+                COMBO(amps, &kp AMPS, 8 21)       // &
+                COMBO(star, &kp STAR, 9 22)       // *
+                COMBO(question, &kp QUESTION, 9 21)   // ?
+                COMBO(backslash, &kp BACKSLASH, 10 23) // \
                 //row 2
-                COMBO(PIPE, &kp PIPE, 20 21) // |
-                COMBO(DOUBLE_QUOTES, &kp DOUBLE_QUOTES, 21 22) // "
-                COMBO(SINGLE_QUOTE, &kp SINGLE_QUOTE, 22 23)   // '
+                COMBO(pipe, &kp PIPE, 20 21) // |
+                COMBO(double_quote, &kp DOUBLE_QUOTES, 21 22) // "
+                COMBO(single_quote, &kp SINGLE_QUOTE, 22 23)   // '
                 //row 2.5
                 // COMBO(FULL_QUOTES, &none, 21 33) // ""<-
-                COMBO(COLON, &kp COLON, 22 33) // :
+                COMBO(colon, &kp COLON, 22 33) // :
                 // COMBO(SMALL_QUOTES, &none, 22 34) // ''<-
                 //row 3
-                COMBO(LT, &kp LT, 33 34) // <
-                COMBO(GT, &kp GT, 35 35)// >
+                COMBO(lt, &kp LT, 33 34) // <
+                COMBO(gt, &kp GT, 35 35)// >
                 // COMBO(LTGT, &none ,33 35) // <><-
         };
 
