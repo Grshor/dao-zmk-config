@@ -33,13 +33,13 @@
                 };
                 shfm: shift_mod {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "shift_mod";
+                        label = "SHIFT_MOD";
                         #binding-cells = <2>;
                         tapping-term-ms = <150>;
                         quick-tap-ms = <200>;
                         flavor = "tap-preferred";
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
                         bindings = <&kp>, <&kp>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
         };
 
@@ -356,7 +356,7 @@ adjust_layer {
         insert_bracket: insert_bracket {
             wait-ms = <40>;
             tap-ms = <40>;
-            label = "insert_bracket";
+            label = "INSERT_BRACKET";
             compatible = "zmk,behavior-macro";
             #binding-cells = <2>;
             bindings
