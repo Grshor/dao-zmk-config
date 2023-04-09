@@ -320,7 +320,7 @@ adjust_layer {
                 layers = <0>;\
             };//{}<-
             // COMBO(BPARS, &none, 8 10)     // ()<-
-            combo_braces{
+            combo_pars{
                 timeout-ms = <50>; \
                 bindings = <&insert_bracket LPAR RPAR>;\
                 key-positions = <8 10>;\
