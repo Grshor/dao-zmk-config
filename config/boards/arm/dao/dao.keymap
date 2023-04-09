@@ -294,49 +294,49 @@ adjust_layer {
             // COMBO(LTGT, &none ,33 35) // <><-
             combo_ltgt{
                 timeout-ms = <50>; \
-                bindings = <&insert_bracket LT GT>;\
+                bindings = <&kp LT &kp LEFT &kp GT>;\
                 key-positions = <33 35>;\
                 layers = <0>;\
             };//<><-
             // COMBO(BBKTS, &none ,3 5)   // []<-
             combo_bkts{
                 timeout-ms = <50>; \
-                bindings = <&insert_bracket LBKT RBKT>;\
+                bindings = <&kp LBKT &kp LEFT &kp RBKT>;\
                 key-positions = <3 5>;\
                 layers = <0>;\
             };//[]<-
             // COMBO(GRAVES, &none AT, 16 28) // ``<-
             combo_graves{
                 timeout-ms = <50>; \
-                bindings = <&insert_bracket GRAVE GRAVE>;\
+                bindings = <&kp GRAVE &kp LEFT &kp GRAVE>;\
                 key-positions = <16 28>;\
                 layers = <0>;\
             };//``<-
             // COMBO(BRACES, &none, 28 30) // {};<-
             combo_braces{
                 timeout-ms = <50>; \
-                bindings = <&insert_bracket LEFT_BRACE RIGHT_BRACE>;\
+                bindings = <&kp LEFT_BRACE &kp LEFT &kp RIGHT_BRACE>;\
                 key-positions = <28 30>;\
                 layers = <0>;\
             };//{}<-
             // COMBO(BPARS, &none, 8 10)     // ()<-
             combo_pars{
                 timeout-ms = <50>; \
-                bindings = <&insert_bracket LPAR RPAR>;\
+                bindings = <&kp LPAR &kp LEFT &kp RPAR>;\
                 key-positions = <8 10>;\
                 layers = <0>;\
             };//()<-
             // COMBO(FULL_QUOTES, &none, 21 33) // ""<-
             combo_dquotes{
                 timeout-ms = <50>; \
-                bindings = <&insert_bracket DOUBLE_QUOTES DOUBLE_QUOTES>;\
+                bindings = <&kp DOUBLE_QUOTES &kp LEFT &kp DOUBLE_QUOTES>;\
                 key-positions = <21 33>;\
                 layers = <0>;\
             };//""<-
             // COMBO(SMALL_QUOTES, &none, 22 34) // ''<-
             combo_quotes{
                 timeout-ms = <50>; \
-                bindings = <&insert_bracket SINGLE_QUOTE SINGLE_QUOTE>;\
+                bindings = <&kp SINGLE_QUOTE &kp LEFT &kp SINGLE_QUOTE>;\
                 key-positions = <22 34>;\
                 layers = <0>;\
             };//""<-
@@ -352,16 +352,16 @@ adjust_layer {
 
     };
 
-    macros {
-        insert_bracket: insert_bracket {
-            wait-ms = <40>;
-            tap-ms = <40>;
-            label = "INSERT_BRACKET";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <2>;
-            bindings
-                = <&macro_tap &kp &kp LEFT &kp>;
-        };
-    };
+    // macros {
+    //     insert_bracket: insert_bracket {
+    //         wait-ms = <40>;
+    //         tap-ms = <40>;
+    //         label = "INSERT_BRACKET";
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings
+    //             = <&macro_tap &kp &kp LEFT &kp>;
+    //     };
+    // };
 };
 
