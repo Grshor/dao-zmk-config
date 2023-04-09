@@ -291,7 +291,7 @@ adjust_layer {
         26 27 28 29 30 31    32 33 34 35 36 37
         */
 
-            COMBO(LTGT, &none ,33 35) // <><-
+            // COMBO(LTGT, &none ,33 35) // <><-
             combo_ltgt{
                 timeout-ms = <50>; \
                 bindings = <&insert_bracket LT GT>;\
